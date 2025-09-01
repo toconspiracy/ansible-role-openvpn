@@ -24,12 +24,12 @@
     immediate: true
     state: enabled
 
-- name: firewall | firewalld | Set tun0 interface to trusted
+- name: firewall | firewalld | Set tun0 interface to public
   # We need the tun0 interface to be trusted so that packets from other systems
   # can be routed through the VPN tunnel.
   ansible.posix.firewalld:
     interface: tun0
-    zone: trusted
+    zone: public
     permanent: true
     immediate: true
     state: enabled

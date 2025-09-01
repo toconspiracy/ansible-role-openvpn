@@ -93,7 +93,7 @@
 - name: client_keys | Fetch client config
   ansible.builtin.fetch:
     src: "{{ openvpn_ovpn_dir }}/{{ item }}-{{ inventory_hostname }}.ovpn"
-    dest: "{{ openvpn_fetch_client_configs_dir }}/{{ item }}/{{ inventory_hostname }}{{ openvpn_fetch_client_configs_suffix }}.ovpn"
+    dest: "{{ openvpn_fetch_client_configs_dir }}/{{ item }}.ovpn"
     flat: true
   when: openvpn_fetch_client_configs is truthy
   with_items:
