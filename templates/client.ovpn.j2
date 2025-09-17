@@ -3,7 +3,7 @@ client
 tls-client
 auth {{ openvpn_auth_alg }}
 {% if openvpn_cipher is truthy %}
-data-ciphers {{ openvpn_cipher }}
+cipher {{ openvpn_cipher }}
 {% endif %}
 remote-cert-tls server
 {% if openvpn_tls_version_min %}
@@ -13,6 +13,9 @@ tls-version-min {{ openvpn_tls_version_min }}
 proto {{ openvpn_proto }}
 remote {{ openvpn_server_hostname }} {{ openvpn_port }}
 dev tun
+
+tun-mtu 1492
+mssfix 1400
 
 resolv-retry {{ openvpn_resolv_retry }}
 nobind

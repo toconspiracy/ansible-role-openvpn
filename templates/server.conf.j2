@@ -31,6 +31,7 @@ data-ciphers {{ openvpn_cipher }}
 {% endif %}
 {% if openvpn_tun_mtu %}
 tun-mtu {{ openvpn_tun_mtu }}
+mssfix 1400
 {% endif %}
 {% if openvpn_tls_version_min %}
 tls-version-min {{ openvpn_tls_version_min }}
