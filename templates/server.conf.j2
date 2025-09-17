@@ -27,7 +27,7 @@ tls-crypt {{ openvpn_key_dir }}/tls-crypt.key
 tls-server
 auth {{ openvpn_auth_alg }}
 {% if openvpn_cipher %}
-data-ciphers {{ openvpn_cipher }}
+cipher {{ openvpn_cipher }}
 {% endif %}
 {% if openvpn_tun_mtu %}
 tun-mtu {{ openvpn_tun_mtu }}

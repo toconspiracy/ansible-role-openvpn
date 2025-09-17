@@ -14,9 +14,6 @@ proto {{ openvpn_proto }}
 remote {{ openvpn_server_hostname }} {{ openvpn_port }}
 dev tun
 
-tun-mtu 1492
-mssfix 1400
-
 resolv-retry {{ openvpn_resolv_retry }}
 nobind
 keepalive {{ openvpn_keepalive_ping }} {{ openvpn_keepalive_timeout }}
